@@ -11,7 +11,7 @@
 
 #include <atlbase.h>				// Registry access
 
-#include "..\..\commun32\ffile.h"
+#include "..\..\common\ffile.h"
 
 struct FontOptions{
 	_TCHAR fontname[_MAX_PATH];

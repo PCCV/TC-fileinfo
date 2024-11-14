@@ -14,14 +14,14 @@
 #include "extrnvar.h"
 #include "dbgdump.h"
 
-CString DumpImageDbgHeader(PIMAGE_SEPARATE_DEBUG_HEADER pImageSepDbgHeader)
+CString DumpImageDbgHeader(PIMAGE_SEPARATE_DEBUG_HEADER pImageSepDbgHeader, PIMAGE_OPTIONAL_HEADER32 optionalHeader)
 {
     CString str="", strTemp="";
     UINT headerFieldWidth = 30;
 
     strTemp.Format("  %-*s%04Xh\r\n", headerFieldWidth, "Flags:", pImageSepDbgHeader->Flags);
 	str += strTemp;
-    strTemp.Format("  %-*s%04Xh %s\r\n", headerFieldWidth, "Machine:", pImageSepDbgHeader->Machine, GetMachineTypeName(pImageSepDbgHeader->Machine));
+    strTemp.Format("  %-*s%04Xh %s\r\n", headerFieldWidth, "Machine:", pImageSepDbgHeader->Machine, GetMachineTypeName(pImageSepDbgHeader->Machine, optionalHeader->MajorSubsystemVersion, optionalHeader->MinorSubsystemVersion));
 	str += strTemp;
     strTemp.Format("  %-*s%04Xh\r\n", headerFieldWidth, "Characteristics:", pImageSepDbgHeader->Characteristics);
 	str += strTemp;
@@ -44,10 +44,10 @@ CString DumpImageDbgHeader(PIMAGE_SEPARATE_DEBUG_HEADER pImageSepDbgHeader)
 	return str;
 }
 
-CString DumpDbgFile( PIMAGE_SEPARATE_DEBUG_HEADER pImageSepDbgHeader )
+CString DumpDbgFile( PIMAGE_SEPARATE_DEBUG_HEADER pImageSepDbgHeader, PIMAGE_OPTIONAL_HEADER32 optionalHeader)
 {
     CString str="", strTemp="";
-    str += DumpImageDbgHeader(pImageSepDbgHeader);
+    str += DumpImageDbgHeader(pImageSepDbgHeader, optionalHeader);
     str += "\r\n";
     
     str += DumpSectionTable( (PIMAGE_SECTION_HEADER)(pImageSepDbgHeader+1),

@@ -6,7 +6,7 @@
 #ifndef __MEMMAPFL_H__
 #define __MEMMAPFL_H__
 #include <windows.h>
-#include "..\..\commun32\ffile.h"
+#include "..\..\common\ffile.h"
 
 enum errMMF {   errMMF_NoError, errMMF_FileOpen,
                 errMMF_FileMapping, errMMF_MapView };

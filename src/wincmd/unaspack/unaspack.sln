@@ -1,30 +1,32 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unaspack", "unaspack.vcproj", "{B945391B-B7D5-4AB8-A07D-4700E4A330CA}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35424.110 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unaspack", "unaspack.vcxproj", "{B945391B-B7D5-4AB8-A07D-4700E4A330CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Win32 = Debug|Win32
 		Debug|x64 = Debug|x64
-		Release_dynMFC|Win32 = Release_dynMFC|Win32
+		Debug|x86 = Debug|x86
 		Release_dynMFC|x64 = Release_dynMFC|x64
-		Release|Win32 = Release|Win32
+		Release_dynMFC|x86 = Release_dynMFC|x86
 		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Debug|Win32.Build.0 = Debug|Win32
 		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Debug|x64.ActiveCfg = Debug|x64
 		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Debug|x64.Build.0 = Debug|x64
-		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release_dynMFC|Win32.ActiveCfg = Release_dynMFC|Win32
-		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release_dynMFC|Win32.Build.0 = Release_dynMFC|Win32
+		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Debug|x86.ActiveCfg = Debug|Win32
+		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Debug|x86.Build.0 = Debug|Win32
 		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release_dynMFC|x64.ActiveCfg = Release_dynMFC|x64
 		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release_dynMFC|x64.Build.0 = Release_dynMFC|x64
-		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release|Win32.ActiveCfg = Release|Win32
-		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release|Win32.Build.0 = Release|Win32
+		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release_dynMFC|x86.ActiveCfg = Release_dynMFC|Win32
+		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release_dynMFC|x86.Build.0 = Release_dynMFC|Win32
 		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release|x64.ActiveCfg = Release|x64
 		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release|x64.Build.0 = Release|x64
+		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release|x86.ActiveCfg = Release|Win32
+		{B945391B-B7D5-4AB8-A07D-4700E4A330CA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

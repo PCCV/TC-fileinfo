@@ -7,8 +7,8 @@
 // PageTree.h : header file
 //
 #include "resource.h"
-#include "..\commun\ResizePage.h"
-#include "..\commun\wait.h"
+#include "..\common\ResizePage.h"
+#include "..\common\wait.h"
 
 typedef void ( * pfunc )(PVOID ptr, CTreeCtrl &tree, CWait &wait );
 /////////////////////////////////////////////////////////////////////////////

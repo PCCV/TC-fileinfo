@@ -2,6 +2,11 @@
 #include <stdexcept>
 #include <delayimp.h>
 
+#ifndef _RAISE
+#define _RAISE(x) _invoke_watson(nullptr, nullptr, nullptr, 0, 0)
+#endif
+
+
 /////////////////////////////////////////////////////////////////////////////
 // Delay-load notification
 //

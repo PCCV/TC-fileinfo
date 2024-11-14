@@ -4,7 +4,7 @@
 //==================================
 #include "stdafx.h"
 
-#include "..\..\..\commun32\fdate.h"
+#include "..\..\..\common\fdate.h"
 #include "common.h"
 #include "symboltablesupport.h"
 #include "extrnvar.h"
@@ -73,7 +73,7 @@ WORD_FLAG_DESCRIPTIONS ImageFileHeaderCharacteristics[] =
 //
 // Dump the IMAGE_FILE_HEADER for a PE file or an OBJ
 // common to 32 and 64 bits PE
-CString DumpHeader(PIMAGE_FILE_HEADER pImageFileHeader)
+CString DumpHeader(PIMAGE_FILE_HEADER pImageFileHeader, PIMAGE_OPTIONAL_HEADER32 optionalHeader)
 {
     CString str="", strTemp="";
     UINT headerFieldWidth = 30;
@@ -90,9 +90,17 @@ CString DumpHeader(PIMAGE_FILE_HEADER pImageFileHeader)
 
     str += ("FILE HEADER :\r\n\r\n");
 
+	WORD MajorSubsystemVersion = 0;
+	WORD MinorSubsystemVersion = 0;
+	if (optionalHeader != nullptr)
+	{
+		MajorSubsystemVersion = optionalHeader->MajorSubsystemVersion;
+		MinorSubsystemVersion = optionalHeader->MinorSubsystemVersion;
+	}
+
     strTemp.Format("\t%-*s\t%04Xh (%s)\r\n", headerFieldWidth, "Machine:", 
                 pImageFileHeader->Machine,
-                GetMachineTypeName(pImageFileHeader->Machine) );
+                GetMachineTypeName(pImageFileHeader->Machine, MajorSubsystemVersion, MinorSubsystemVersion) );
 	str += strTemp;
     strTemp.Format("\t%-*s\t%04Xh\r\n", headerFieldWidth, "Number of Sections:",
                 pImageFileHeader->NumberOfSections);
@@ -413,11 +421,15 @@ CString DumpOptionalHeader(PIMAGE_OPTIONAL_HEADER32 optionalHeader)
 
 #define IMAGE_FILE_MACHINE_TRICORE           0x0520  // Infineon
 #define IMAGE_FILE_MACHINE_EBC               0x0EBC  // EFI Byte Code
-#define IMAGE_FILE_MACHINE_AMD64             0x8664  // AMD64 (K8)
+#define IMAGE_FILE_MACHINE_AMD64_ARM64EC     0x8664  // AMD64 (K8) or ARM64EC depending on Subsystem 
 #define IMAGE_FILE_MACHINE_M32R              0x9041  // M32R little-endian
+
+#define IMAGE_FILE_MACHINE_ARM64             0xAA64  // ARM64
+
 #define IMAGE_FILE_MACHINE_CEE               0xC0EE
 #define IMAGE_FILE_MACHINE_CEF               0x0CEF
-PSTR GetMachineTypeName( WORD wMachineType )
+
+PSTR GetMachineTypeName( WORD wMachineType, WORD MajorSubsystemVersion,WORD MinorSubsystemVersion)
 {
     switch( wMachineType )
     {
@@ -450,8 +462,18 @@ PSTR GetMachineTypeName( WORD wMachineType )
 		case IMAGE_FILE_MACHINE_AM33    :return "AM33";
 		case IMAGE_FILE_MACHINE_TRICORE :return "Infineon";// Infineon
 		case IMAGE_FILE_MACHINE_EBC     :return "EFI Byte Code";
-		case IMAGE_FILE_MACHINE_AMD64   :return "AMD64 (K8)";
+		case IMAGE_FILE_MACHINE_AMD64_ARM64EC:
+		{
+			if (
+				(MajorSubsystemVersion == 5) && (MinorSubsystemVersion == 2)
+				|| (MajorSubsystemVersion == 6) && (MinorSubsystemVersion == 2)
+				)
+				return "ARM64EC";
+			return "AMD64 (K8)";
+		}
+
 		case IMAGE_FILE_MACHINE_M32R    :return "M32R little-endian";
+		case IMAGE_FILE_MACHINE_ARM64	:return "ARM64";
 		case IMAGE_FILE_MACHINE_CEE     :return "CEE";
 		case IMAGE_FILE_MACHINE_CEF     :return "CEF"; // ?
 

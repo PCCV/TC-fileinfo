@@ -3,7 +3,7 @@
 // FILE: EXEDUMP.H
 //==================================
 #include "afx.h"
-#include "..\..\commun\wait.h"
+#include "..\..\common\wait.h"
 #include "..\peexe\peexe.h"
 
 // CString DumpExeFile( PIMAGE_DOS_HEADER dosHeader );

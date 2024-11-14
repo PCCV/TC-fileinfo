@@ -76,7 +76,7 @@ CString DumpObjRelocations(PIMAGE_RELOCATION pRelocs, DWORD count)
 // top level routine called from PEDUMP.C to dump the components of a
 // COFF OBJ file.
 //
-CString  DumpObjFile( PIMAGE_FILE_HEADER pImageFileHeader )
+CString  DumpObjFile( PIMAGE_FILE_HEADER pImageFileHeader, PIMAGE_OPTIONAL_HEADER32 optionalHeader)
 {
 	CString str, strTp;
 //strTp.Format
@@ -84,7 +84,7 @@ CString  DumpObjFile( PIMAGE_FILE_HEADER pImageFileHeader )
     unsigned i;
     PIMAGE_SECTION_HEADER pSections;
     
-    str += DumpHeader(pImageFileHeader);
+    str += DumpHeader(pImageFileHeader, optionalHeader);
     str += ("\n");
 
     pSections = MakePtr(PIMAGE_SECTION_HEADER, (pImageFileHeader+1), pImageFileHeader->SizeOfOptionalHeader);

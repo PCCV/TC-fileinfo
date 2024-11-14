@@ -6,7 +6,7 @@
 //#include <atlbase.h>
 
 #include "TypeLib.h"
-#include "..\commun\wait.h"
+#include "..\common\wait.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

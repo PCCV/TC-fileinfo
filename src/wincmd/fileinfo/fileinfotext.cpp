@@ -8,8 +8,8 @@
 #include "stdafx.h"
 #include "fileinfotext.h"
 
-#include "..\..\commun32\ffile.h"
-#include "..\..\commun32\verwin.h"
+#include "..\..\common\ffile.h"
+#include "..\..\common\verwin.h"
 
 #include "peexe\dependencylist.h"
 #include "pedump\exedump.h"
@@ -444,7 +444,13 @@ CString CreateText2(PVOID ptr, CWait &wait)
 
     switch ( DisplayObjectFile( libFile ) )
     {
-        case OBJ_COFF_OBJ: str += DumpObjFile( (PIMAGE_FILE_HEADER) libFile->GetBase() ); break; // DumpCOFFLibFile( (LPVOID) libFile->GetBase()); break;
+	case OBJ_COFF_OBJ:
+		{
+			PIMAGE_FILE_HEADER pImgFileHdr = (PIMAGE_FILE_HEADER)libFile->GetBase();
+			PIMAGE_OPTIONAL_HEADER32 pImgOptHdr = (PIMAGE_OPTIONAL_HEADER32)(pImgFileHdr + 1);
+			str += DumpObjFile(pImgFileHdr, pImgOptHdr);
+			break;
+		}
         case OBJ_COFF_LIB: //        DumpCOFFObjFile( (LPVOID) libFile->GetBase() );
 //			str += DumpLibFile( (LPVOID) libFile->GetBase() ); break;
 			str += DumpLibFile( ptr ); break;

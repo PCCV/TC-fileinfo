@@ -7,9 +7,9 @@
 #include "stdafx.h"
 #include <stdio.h>
 #include "..\peexe\peexe.h"
-#include "..\..\commun\wait.h"
+#include "..\..\common\wait.h"
 
-#include "..\..\..\commun32\fdate.h"
+#include "..\..\..\common\fdate.h"
 #pragma hdrstop
 #include "common.h"
 #include "symboltablesupport.h"
@@ -764,7 +764,7 @@ CString DumpExeFile( PE_EXE &pe, CWait &wait )
 		str = str + "Possible Packer/Encryptor :\t" + SzPacker[compress-1];
 		str += "\r\n";
 	}	
-	str += DumpHeader((PIMAGE_FILE_HEADER)&pNTHeader->FileHeader);
+	str += DumpHeader((PIMAGE_FILE_HEADER)&pNTHeader->FileHeader, (PIMAGE_OPTIONAL_HEADER32)&pNTHeader->OptionalHeader);
     str += "\r\n";
 
     str += DumpOptionalHeader((PIMAGE_OPTIONAL_HEADER32)&pNTHeader->OptionalHeader);

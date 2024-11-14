@@ -7,7 +7,7 @@
 #define __EXEFILE_H__
 
 #ifndef __MEMMAPFL_H__
-#include "..\..\commun\memorymappedfile.h"
+#include "..\..\common\memorymappedfile.h"
 #endif
 
 // MakePtr is a macro that allows you to easily add to values (including

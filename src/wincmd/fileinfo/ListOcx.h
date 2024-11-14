@@ -7,9 +7,9 @@
 // ListOCX.h : header file
 //
 #include "resource.h"
-#include "..\commun\ResizePage.h"
+#include "..\common\ResizePage.h"
 #include "peexe\peexe.h"
-#include "..\..\wincmd\commun\TCutils.h"
+#include "..\..\wincmd\common\TCutils.h"
 
 // typedef void ( * pfuncOcx )(PVOID ptr, CListCtrl &, CRichEditCtrl &);
 /////////////////////////////////////////////////////////////////////////////

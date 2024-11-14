@@ -10,9 +10,9 @@
 // About.h : header file
 //
 #include "resource.h"
-#include "..\commun\ResizePage.h"
+#include "..\common\ResizePage.h"
 #include "tcoptions.h"
-#include "..\commun\HyperLink.h"
+#include "..\common\HyperLink.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CAbout dialog

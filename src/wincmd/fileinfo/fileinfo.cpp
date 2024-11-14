@@ -8,16 +8,16 @@
 
 #include "stdafx.h"
 
-#include "..\commun\listplug.h"
+#include "..\common\listplug.h"
 #include "FileinfoListWnd.h"
 #include "tcoptions.h"
 
 #include "fileinfotext.h"
 #include "peexe\peexe.h"
 #include "TypeLib.h"
-#include "..\..\commun32\verwin.h"
+#include "..\..\common\verwin.h"
 
-#include "..\commun\TCutils.h"
+#include "..\common\TCutils.h"
 // #include "vld.h"
 
 #ifndef _WIN32

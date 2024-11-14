@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "PageTree.h"
 
-#include "..\..\commun32\verwin.h"
+#include "..\..\common\verwin.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE

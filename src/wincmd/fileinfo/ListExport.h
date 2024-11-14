@@ -7,7 +7,7 @@
 // ListExport.h : header file
 //
 #include "resource.h"
-#include "..\commun\ResizePage.h"
+#include "..\common\ResizePage.h"
 #include "peexe\peexe.h"
 /////////////////////////////////////////////////////////////////////////////
 // CListExport dialog

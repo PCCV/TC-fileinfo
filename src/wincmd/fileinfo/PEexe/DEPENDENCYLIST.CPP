@@ -11,7 +11,7 @@
 #include "dependencylist.h"
 #include <delayimp.h>
 
-#include "..\..\..\commun32\ffile.h"
+#include "..\..\..\common\ffile.h"
 
 BOOL test_Name( PCHAR str);
 

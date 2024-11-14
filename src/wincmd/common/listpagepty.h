@@ -9,10 +9,10 @@
 #endif // _MSC_VER > 1000
 // ListpagePty.h : header file
 //
-#include "..\commun\resource.h"
+#include "..\common\resource.h"
 #include "resource.h"
 #include "ResizePage.h"
-#include "..\..\wincmd\commun\TCutils.h"
+#include "..\..\wincmd\common\TCutils.h"
 #include "wait.h"
 
 typedef CString ( *pfuncRE )( PVOID ptr, CWait &wait );

@@ -3,4 +3,4 @@ description=Version Information Viewer for all binary files
 type=wlx
 file=fileinfo.wlx
 defaultdir=Plugins\wlx\fileinfo
-version=2.23 (18.05.2017)
+version=2.24 (13.11.2024)

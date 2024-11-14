@@ -197,8 +197,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,2,3,0
- PRODUCTVERSION 2,2,3,0
+ FILEVERSION 2,2,4,0
+ PRODUCTVERSION 2,2,4,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -216,26 +216,26 @@ BEGIN
             VALUE "Comments", "Display File and Version Information in Total Commander 5.50+"
             VALUE "CompanyName", "François GANNIER"
             VALUE "FileDescription", "File Version Information for Total Commander 5.50"
-            VALUE "FileVersion", "2, 2, 3, 0"
+            VALUE "FileVersion", "2, 2, 4, 0"
             VALUE "InternalName", "fileinfo"
-            VALUE "LegalCopyright", "François GANNIER, Copyright (C) 2002-20015"
+            VALUE "LegalCopyright", "François GANNIER, Copyright (C) 2002-2024"
             VALUE "LegalTrademarks", "Some code from Christian Ghisler, Thomas Weller (Special Thank for it's CFileVersionInfo  Class), Matt Pietrek"
             VALUE "OriginalFilename", "fileinfo.wlx"
             VALUE "ProductName", "Version info Application"
-            VALUE "ProductVersion", "2, 2, 3, 0"
+            VALUE "ProductVersion", "2, 2, 4, 0"
         END
         BLOCK "040c04b0"
         BEGIN
             VALUE "Comments", "Affiche les informations de Version des executables dans Total Commander 5.50+"
             VALUE "CompanyName", "François GANNIER"
             VALUE "FileDescription", "Versions Information pour Total Commander 5.50"
-            VALUE "FileVersion", "2, 2, 3, 0"
+            VALUE "FileVersion", "2, 2, 4, 0"
             VALUE "InternalName", "fileinfo"
-            VALUE "LegalCopyright", "François GANNIER, Copyright (C) 2002-20015"
+            VALUE "LegalCopyright", "François GANNIER, Copyright (C) 2002-2024"
             VALUE "LegalTrademarks", "Christian Ghisler, Thomas Weller (un grand merci pour CFileVersionInfo  Class), Matt Pietrek"
             VALUE "OriginalFilename", "fileinfo.wlx"
             VALUE "ProductName", "Version info Application"
-            VALUE "ProductVersion", "2, 2, 3, 0"
+            VALUE "ProductVersion", "2, 2, 4, 0"
         END
     END
     BLOCK "VarFileInfo"
@@ -316,7 +316,7 @@ STRINGTABLE
 BEGIN
     IDS_STRING1             "Version Information viewer plugin for Total Commander\nby François GANNIER\n"
     IDS_STRING2             "\nSpecial thanks to :\n--------------------------\nEnrico Frumento to provide me sources to extract typelib information\nThomas Weller , for his file : file_ver.cpp ; Implementation of class CFileVersionInfo.  (Last modified:  02/02/2002)\nGiancarlo Iovino  : HyperLink static control\nMatt Pietrek for his helpfull articles on PE files format.\nChristian Ghisler author of Total Commander: for developing this great utilitie and for the lister plugin interface \n"
-    IDS_STRING3             "\nCopyrigth (c) 2002 - 2003 François GANNIER\nAll rigths reserved"
+    IDS_STRING3             "\nCopyright (c) 2002 - 2024 François GANNIER\nAll rigths reserved"
     IDS_STRING4             "\nSend comments to the author :\nFrançois GANNIER  ( fgannier@physio-a.univ-tours.fr )\nhttp://physio-a.univ-tours.fr/tcplugins/"
     IDS_STRING5             "\nHistory :\n--------------"
     IDS_STRING6             "\n2.22 -"
@@ -346,6 +346,7 @@ BEGIN
     IDS_STRING32            "\n2.21 - 15.01.2012\n   - Added : subsystem ""IMAGE_SUBSYSTEM_WINDOWS_BOOT_APPLICATION"" and ""IMAGE_SUBSYSTEM_EFI_ROM""\n   - Added : new tab for Manifest resource if present\n   - Added : resource types ""RT_HTML"", ""RT_MANIFEST"", ""RT_DLGINIT"" & ""RT_TOOLBAR""\n   - Added : 's' and 'u' key to sort and undecorate in 'Imports/Exports' tabs\n   - Added : in 'DLL dependency' & 'Imports/Exports' tabs, the 'F3' key can open a new fileinfo window\n   - Added : x64 version of unaspack plugun\n   - Added : Button to edit fileinfo.ini\n   - Added : in ""DLL dependency"" tab, path of file is added\n   - Changed : Address/Size of unused Data directory not displayed\n   - Fixed : crash with filesize > 4GB\n   - Fixed : in Imports/Exports tab, impossible to uncheck 'Sort' checkbox\n   - Fixed : unaspack plugin\n   - Fixed : wrong service pack detected\n   - Fixed : missing delay-load DLL was not displayed correctly\n"
     IDS_STRING33            "\n2.22 - 01.07.2015\n   - Added : Implementation of ListLoadNext\n   - Added : links to support and donation\n   - Added : Context Menu for ""File properties""/""Image File Header""/""Manifest"" tabs\n   - Updated : links to HTML homepage and e-mail\n   - Fixed : DoS vulnerability (10 corrected)\n   - Fixed : crash with some EXE/DLL without resource\n   - Fixed : incorrect list of import functions in delayed DLL of x64 Applications\n   - Fixed : crash in ""Resource Dump"" with some chars in String Table\n   - Fixed : resources not shown if Manifest resource exist\n   - Fixed : some memory leaks\n"
     IDS_STRING34            "\n2.23 - 18.05.2017\n   - Fixed : ListLoadNext not really working (content not changed)\n   - Fixed : Pointer moved to arbitrary location\n   - Fixed : Missing values in ""Manifest""\n   - Fixed : Crash in ""Image File Header"" on some DLL\n   - Fixed : Crash in ""Image File Header"" with option ""Relocations"" (Dump_Pdata)\n   - Fixed : Memory leak\n"
+    IDS_STRING35            "\n2.24 - 13.11.2024 (GizMoCuz)\n   - Added   : Support for ARM64, ARM64EC\n"
 END
 
 #endif    // Anglais (États-Unis) resources

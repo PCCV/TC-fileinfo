@@ -156,6 +156,8 @@ BOOL CAbout::OnInitDialog()
    m_edit += str;
    str.LoadString( IDS_STRING5 ); // history 0
    m_edit += str;
+   str.LoadString( IDS_STRING35); // history 2.24
+   m_edit += str;
    str.LoadString( IDS_STRING34); // history 2.23
    m_edit += str;
    str.LoadString( IDS_STRING33); // history 2.22

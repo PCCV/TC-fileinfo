@@ -6,7 +6,7 @@
 #endif // _MSC_VER > 1000
 // FileinfoListWnd.h : header file
 //
-#include "..\commun\ListWnd.h"
+#include "..\common\ListWnd.h"
 #include "ListSheet.h"
 
 #include "peexe\peexe.h"

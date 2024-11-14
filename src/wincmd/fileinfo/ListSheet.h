@@ -9,8 +9,8 @@
 #endif // _MSC_VER > 1000
 // ListSheet.h : header file
 //
-#include "..\commun\PropertySheetRz.h"
-#include "..\commun\ListPagePty.h"
+#include "..\common\PropertySheetRz.h"
+#include "..\common\ListPagePty.h"
 #include "ListExport.h"
 #include "PageTree.h"
 #include "ListOCX.h"

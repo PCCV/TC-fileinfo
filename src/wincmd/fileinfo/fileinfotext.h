@@ -9,11 +9,11 @@
 #if !defined( __FINFO_H )
 #define __FINFO_H
 
-#include "..\..\commun32\fdate.h"
+#include "..\..\common\fdate.h"
 #include "file_ver.h"
-#include "..\commun\wait.h"
+#include "..\common\wait.h"
 
-#include "..\commun\memorymappedfile.h"
+#include "..\common\memorymappedfile.h"
 
 #define ModuleName "fileinfo.wlx"
 

@@ -8,7 +8,7 @@
 #include <windows.h>
 #include "modulefileinfo.h"
 
-#include "..\..\..\commun32\ffile.h"
+#include "..\..\..\common\ffile.h"
 extern BOOL b_W95Protect;
 
 MODULE_FILE_INFO::MODULE_FILE_INFO( const PSTR pszFileName, long address, BOOL found)
